@@ -1,34 +1,11 @@
 from telethon.sync import TelegramClient
 from telethon import events
-from setting import api_id, api_hash, phone_number, word_list
+from setting import api_id, api_hash, phone_number, word_list, chats_name
 
 
 with TelegramClient(phone_number, api_id, api_hash) as client:
     # Получаем все сообщения из группы
-    @client.on(events.NewMessage(chats=['itentre', 'kipr_it', 'dubai_it360', 'forum_sri_lanka', 'singapore_it',
-                                        'people360_it', 'turkish_nomands', 'itgermania', 'thetechkzchat',
-                                        'Dubai_Networkk', 'networkers_bali', 'BIZDXB24', 'biznesdvigusa',
-                                        'businesss_chat', 'Bulgaria_network', 'DubaiChatik', 'dubai_biznesss',
-                                        'coworking_in_dubai', 'dubaiexpert1', 'aiimxo', 'thetechkzchat', 'proect_x',
-                                        'samarabusinesschat', 'Bizdecbiz', 'chat_predprinimateley', 'cyb2b',
-                                        'cyprus_uslugi', 'jobcyprusonline', 'biznesky', 'dubyisk', 'bulgarianbussines',
-                                        'uae_ads', 'business_chat_usa', 'top1businessusa', 'canadajobsnrentalservice',
-                                        'PolandF', 'chat_predprin', 'biz_on_club', 'biznes_ispania',
-                                        'Sofia_Bulgaria_business', 'servicio24', 'GirneTRSK', 'bisnes_chatt',
-                                        'DubaiForum24', 'law_taxes', 'produckty', 'SPBSparta', 'dubaichatik1',
-                                        'NFTCommunityUkraine', 'bizneshelpall_chat', 'joingroupforEntrepreneurs',
-                                        'QQQFoundersDAO', 'Web3_Global', 'Web3CryptoClub', 'definityfifoundersgroup',
-                                        'humansdao', 'web3foundersclub', 'Cryptofounder2122', 'ncider', 'rudubaichat',
-                                        'ipgeorgiachat', 'business_club_experts', 'businesss_msk', 'businessmenclub',
-                                        'Kipr_Go', 'investgroup_1', 'biznesgermany', 'biznesfrance', 'bisnes_chatt',
-                                        'business_chat_ua', 'MIAMI_HELP', 'UAE_chat', 'ChatRussianDubai',
-                                        'DotNetRuJobs', 'dubai_russng', 'rust_jobs', 'Phuketpar', 'kazannetwork',
-                                        'ITgrants', 'antalya_go', 'UAbcGeo', 'gruzia_ip', 'ceoindigital',
-                                        'BiznesKontakti', 'predprinimateli_kiev', 'trabajar_espana',
-                                        'business_dubai_uae', 'biznesdvigmoskva', 'founders2founders', 'businesss_chat',
-                                        'bussiness_georgia', 'ip_ge', 'Bizness_Bali', 'cyprus_uslugi', 'dubaika_ara',
-                                        'busines_kzn', 'biznes4ru', 'ukrainian_business_europe', 'Thailand_Busines',
-                                        'business_monopoly_dubai', 'dubai_netv', 'forum_sri_lanka', 'test12345koval']))
+    @client.on(events.NewMessage(chats=chats_name))
     async def handle_message(event):
         chat_id = -790083076
         try:
