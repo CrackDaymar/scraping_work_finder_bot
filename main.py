@@ -1,9 +1,9 @@
 from telethon.sync import TelegramClient
 from telethon import events
-from setting import api_id, api_hash, phone_number, chats_name, answer_chat_id, black_list
+from setting import api_bot_id, api_bot_hash, phone_bot_number, chats_name, answer_chat_id, black_list
 from word_list import word_list
 
-with TelegramClient(phone_number, api_id, api_hash) as client:
+with TelegramClient(phone_bot_number, api_bot_id, api_bot_hash) as client:
     @client.on(events.NewMessage(chats=chats_name))
     async def handle_message(event):
         read = True
